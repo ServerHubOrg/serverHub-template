@@ -1,1 +1,1 @@
-# serverhub-template
+# {{projectName}}
