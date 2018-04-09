@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "serverhub-mvc": "0.0.93"
+    "serverhub-mvc": "^1.0.3"
   }
 }
