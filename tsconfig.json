@@ -1,0 +1,13 @@
+{
+    "include": [
+        "src/**/*.ts"
+    ],
+    "exclude": [
+        "**/node_modules/**/*.ts"
+    ],
+    "compilerOptions": {
+        "noEmitOnError": true,
+        "target": "es2015",
+        "noImplicitAny": true
+    }
+}

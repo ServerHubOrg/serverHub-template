@@ -4,12 +4,6 @@
  */
 module.exports = {
     index: function (req, res, method) {
-        this.Console.log('Hello, I\'m from Home controller and index action');
         return this.View();
-    },
-    primary: function (req, res, method) {
-        var context = this.View();
-        context.name = 'System.version -> ' + this.System.Version;
-        return context;
     }
 };

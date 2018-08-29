@@ -1,19 +1,26 @@
-<!DOCTYPE html>
+
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/global.css">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <link rel="stylesheet" href="/content/global.css"/>
+    <link rel="stylesheet" href="/content/brands.css"/>
+    <link rel="stylesheet" href="/content/fontawesome.css"/>
     <title>Home</title>
-</head>
-
-<body>
-    <p>Hello, $${home.name}</p>
-    <hr>
-    <p><a href="https://serverhuborg.github.io/serverhub-mvc/index.html">ServerHub document</a></p>
-    <script src="/global.js"></script>
-</body>
-
+  </head>
+  <body>
+    <main>
+      <video src="/asset/home.m4v" mute="mute" autoPlay="autoPlay" loop="loop" poster="/asset/home.png"></video>
+      <section>
+        <div class="headtext"><span>ALL</span><span>START</span><span>WITH</span></div>
+        <div class="namebox">
+          <input type="text" placeholder="your name" maxlength="20"/>
+          <button><i class="fab fa-telegram"></i></button>
+        </div>
+        <p class="about"><a href="/about">About realtime chatroom demo for ServerHub WebSocket</a></p>
+      </section>
+    </main>
+    <script src="/script/global.js"></script>
+  </body>
 </html>

@@ -1,0 +1,24 @@
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible" content="ie=edge")
+        link(rel="stylesheet" href="/content/global.css")
+        link(rel="stylesheet" href="/content/brands.css")
+        link(rel="stylesheet" href="/content/fontawesome.css")
+        title Home
+    body
+        main
+            video(src="/asset/home.m4v" mute autoPlay loop poster='/asset/home.png')
+            section
+                .headtext
+                    span ALL
+                    span START
+                    span WITH
+                .namebox
+                    input(type="text" placeholder='your name' maxlength=20)
+                    button
+                        i.fab.fa-telegram
+                p.about
+                    a(href="/about") About realtime chatroom demo for ServerHub WebSocket
+        script(src="/script/global.js")
