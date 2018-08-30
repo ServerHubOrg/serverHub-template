@@ -1,0 +1,31 @@
+html
+    head
+        meta(charset='UTF-8')
+        meta(title='Realtime Chatroom')
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="/content/chat.css")
+        link(rel="stylesheet" href="/content/brands.css")
+        link(rel="stylesheet" href="/content/fontawesome.css")
+    body
+        main
+            section.chat
+                .chatbox
+                    //- .message-line.incoming(data-sender='abcd3f22')
+                    //-     .message
+                    //-         image.avatar(data-avatar='1' src='/asset/home.png')
+                    //-         span.name David
+                    //-         .content 
+                    //-             p Hello
+                    //-             p This is David
+                    //- .message-line.outgoing(data-sender='abcd3f23')
+                    //-     .message
+                    //-         image.avatar(data-avatar='1' src='/asset/home.png')
+                    //-         .content 
+                    //-             p Hello
+                    //-             p This is David
+                .messagebox
+                    textarea#textcontent(placeholder="say something to everyone")
+                    button#send
+                        i.fab.fa-telegram
+            section.chatcontrol
+        script(src="/script/chat.js")

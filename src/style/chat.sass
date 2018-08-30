@@ -1,0 +1,133 @@
+@import url('/content/notosansscsliced.css')
+*
+    box-sizing: border-box
+body
+    margin: 0
+    font-size: 16px
+    font-family: 'Noto Sans SC Sliced', 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-seri
+    color: #424242
+
+    main
+        section.chat
+            box-shadow: 4px 8px 24px 0 rgba(0, 0, 0, 0.2), -2px -4px 24px 0 rgba(0, 0, 0, 0.2)
+            border-radius: 12px
+            position: fixed
+            top: calc(50% - 300px)
+            height: 600px
+            left: calc(50% - 240px)
+            width: 480px
+            overflow: hidden
+            .chatbox
+                position: absolute
+                top: 0
+                left: 0
+                right: 0
+                bottom: 64px
+                overflow-y: auto
+                overflow-x: hidden
+                .message-line
+                    display: flex
+                    margin-top: 16px
+                    .message
+                        max-width: 70%
+                        width: max-content
+                        height: max-content
+                        display: grid
+                        grid-template-columns: 48px calc(100% - 48px)
+                        grid-template-rows: 20px auto
+                        span.name
+                            grid-row: 1
+                            grid-column: 2
+                            font-size: 12px
+                            color: #aeaeae
+                        .avatar
+                            height: 40px
+                            width: 40px
+                            display: block
+                            border-radius: 50%
+                            grid-row: 2
+                            grid-column: 1
+                        .content
+                            background-color: #2196f3
+                            border-radius: 0 10px 10px 10px
+                            padding: 4px 12px
+                            color: #fff
+                            width: max-content
+                            height: max-content
+                            grid-row: 2
+                            grid-column: 2
+                            max-width: 100%
+                            overflow-wrap: break-word
+                            p
+                                display: block
+                                margin: 4px 0 0 0
+                                font-size: 14px
+                                min-height: 1em
+                                &:first-child
+                                    margin-top: 0px
+                    &.incoming
+                        padding-left: 16px
+                        justify-content: flex-start
+                        .message
+                            .avatar
+                                margin-right: 8px
+                    &.outgoing
+                        padding-right: 16px
+                        justify-content: flex-end
+                        .message
+                            grid-template-columns: calc(100% - 48px) 48px
+                            justify-items: end
+                            span.name
+                                grid-column: 1
+                                text-align: right
+                            .avatar
+                                margin-left: 8px
+                                float: right
+                                grid-column: 2
+                            .content
+                                background-color: #e0e0e0
+                                border-radius: 10px 0 10px 10px
+                                color: #666666
+                                grid-column: 1
+            .messagebox
+                position: absolute
+                bottom: 0
+                left: 0
+                right: 0
+                height: 64px
+                box-shadow: 0 -2px 9px 0 rgba(0,0,0,.1)
+                padding: 8px 16px
+                display: flex
+                justify-content: space-between
+                textarea
+                    width: calc(100% - 64px)
+                    height: 48px
+                    outline: none
+                    font-size: 14px
+                    border: none
+                    resize: none
+                    color: #757575
+                button
+                    width: 32px
+                    height: 32px
+                    margin-top: 8px
+                    display: block
+                    background-color: transparent
+                    border: 0
+                    border-radius: 50%
+                    padding: 0
+                    font-size: 32px
+                    color: #9e9e9e
+                    cursor: not-allowed
+                    outline: none
+                    &.ready
+                        color: #2196f3
+                        cursor: pointer
+@media (max-width: 480px)
+        body main section.chat
+            width: 100%
+            box-shadow: none
+            border-radius: 0
+            height: calc(100% - 56px)
+            top: 56px
+            left: 0

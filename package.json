@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "gulp": "^4.0.0",
-    "serverhub-mvc": "git+https://github.com/ServerHubOrg/serverhub-mvc.git#patch",
+    "serverhub-mvc": "^1.6.2",
     "ws": "^6.0.0"
   },
   "devDependencies": {
