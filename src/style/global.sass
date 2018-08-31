@@ -71,9 +71,12 @@ main
                 height: 128px
                 font-size: 128px
                 padding: 0
-                color: #fff
+                transition: color ease-in-out 300ms
+                color: #2196f3
                 cursor: pointer
                 text-shadow: 2px 2px 8px rgba(0,0,0,.2)
+                &[disabled]
+                    color: #fff
         p.about
             padding: 0
             margin: 12px 0 0 0
@@ -133,7 +136,6 @@ main
                         height: 48px
                         font-size: 48px
                         padding: 0
-                        color: #fff
                         cursor: pointer
                         text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2)
                         vertical-align: middle

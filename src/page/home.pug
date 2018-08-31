@@ -16,8 +16,8 @@ html(lang="en")
                     span START
                     span WITH
                 .namebox
-                    input(type="text" placeholder='your name' maxlength=20)
-                    button
+                    input#name(type="text" placeholder='your name' maxlength=20)
+                    button#confirm(title="start with a-z or '_', no more than 20" disabled)
                         i.fab.fa-telegram
                 p.about
                     a(href="/about") About realtime chatroom demo for ServerHub WebSocket

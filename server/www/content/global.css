@@ -71,9 +71,12 @@ main section {
       height: 128px;
       font-size: 128px;
       padding: 0;
-      color: #fff;
+      transition: color ease-in-out 300ms;
+      color: #2196f3;
       cursor: pointer;
       text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); }
+      main section .namebox button[disabled] {
+        color: #fff; }
   main section p.about {
     padding: 0;
     margin: 12px 0 0 0; }
@@ -130,7 +133,6 @@ main section {
           height: 48px;
           font-size: 48px;
           padding: 0;
-          color: #fff;
           cursor: pointer;
           text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
           vertical-align: middle;

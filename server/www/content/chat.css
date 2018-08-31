@@ -23,10 +23,25 @@ body {
       right: 0;
       bottom: 64px;
       overflow-y: auto;
-      overflow-x: hidden; }
+      overflow-x: hidden;
+      padding-bottom: 8px; }
       body main section.chat .chatbox .message-line {
         display: flex;
         margin-top: 16px; }
+        body main section.chat .chatbox .message-line.info {
+          width: 100%;
+          justify-content: center; }
+          body main section.chat .chatbox .message-line.info span {
+            width: max-content;
+            background-color: #bebebe;
+            max-width: 80%;
+            line-height: 1.25em;
+            font-size: 12px;
+            border-radius: 12px;
+            padding: 4px 12px;
+            color: #fff;
+            min-height: 1.5em;
+            overflow-wrap: break-word; }
         body main section.chat .chatbox .message-line .message {
           max-width: 70%;
           width: max-content;
@@ -104,7 +119,10 @@ body {
         font-size: 14px;
         border: none;
         resize: none;
-        color: #757575; }
+        color: #757575;
+        border-radius: 5px; }
+        body main section.chat .messagebox textarea[disabled] {
+          background-color: #e7e7e7; }
       body main section.chat .messagebox button {
         width: 32px;
         height: 32px;

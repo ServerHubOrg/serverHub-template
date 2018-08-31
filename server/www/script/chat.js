@@ -47,7 +47,10 @@ window.addEventListener('load', () => {
 });
 let _socket = new WebSocket('ws://' + location.host + '/');
 let _clientID = '';
-let _clientName = 'Name_' + new Date().getTime() + '';
+let match = location.search.match(/(?:name=)([a-z_][a-z\d_-]{1,18}[a-z\d_])/i);
+let _clientName = match ? match[1] : 'unknown';
+if (_clientName === 'unknown')
+    location.href = '/';
 let _messageTemp = '';
 _socket.addEventListener('open', () => {
     console.log('socket ready');
@@ -76,11 +79,28 @@ _socket.addEventListener('message', (ev) => {
     }
     if (data.control === 2) {
         _clientName = data.clientName;
+        systemMessage('Welcome to the new session, ' + _clientName);
+        scrollToChatBottom();
+        document.querySelector('#textcontent').removeAttribute('disabled');
     }
     if (data.control === 3) {
         outgoingMessage(_clientName, _messageTemp, _clientID);
         _messageTemp = '';
         scrollToChatBottom();
+    }
+    if (data.control === 4) {
+        let name = data.clientName;
+        systemMessage(`${name} joins the chat`);
+        if (_potentialScrollTop === 0) {
+            scrollToChatBottom();
+        }
+    }
+    if (data.control === 5) {
+        // someone left the chat
+        let name = data.clientName;
+        systemMessage(`${name} left the chat`);
+        if (_potentialScrollTop === 0)
+            scrollToChatBottom();
     }
 });
 function sendMessage(v) {
@@ -162,6 +182,14 @@ function outgoingMessage(name, msg, id) {
     });
     message.appendChild(content);
     message_line.appendChild(message);
+    document.querySelector('main section.chat div.chatbox').appendChild(message_line);
+}
+function systemMessage(info) {
+    let message_line = document.createElement('div');
+    message_line.classList.add('message-line', 'info');
+    let infospan = document.createElement('span');
+    infospan.textContent = info;
+    message_line.appendChild(infospan);
     document.querySelector('main section.chat div.chatbox').appendChild(message_line);
 }
 function scrollToChatBottom() {

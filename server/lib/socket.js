@@ -32,9 +32,27 @@ module.exports = function (socket) {
                 control: 2,
                 clientName: socket.clientName
             }))
+            sockets.map(s => {
+                if (s.clientID !== socket.clientID)
+                    s.send(JSON.stringify({
+                        control: 4, // new client
+                        clientName: socket.clientName,
+                        clientID: socket.clientID
+                    }));
+            })
         }
     })
     socket.addEventListener('close', () => {
-        sockets = sockets.filter(v => v.clientID !== socket.clientID);
+        let newsockets = [];
+        sockets.map(s => {
+            if (s.clientID !== socket.clientID) {
+                newsockets.push(s);
+                s.send(JSON.stringify({
+                    control: 5,
+                    clientName: socket.clientName
+                }))
+            }
+        })
+        sockets = newsockets;
     })
 }

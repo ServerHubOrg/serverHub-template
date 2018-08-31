@@ -4,3 +4,4 @@ npm-debug.log
 **/*.m4v
 **/*.webm
 **/*.mp4
+server/log/

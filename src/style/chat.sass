@@ -25,9 +25,24 @@ body
                 bottom: 64px
                 overflow-y: auto
                 overflow-x: hidden
+                padding-bottom: 8px
                 .message-line
                     display: flex
                     margin-top: 16px
+                    &.info
+                        width: 100%
+                        justify-content: center
+                        span
+                            width: max-content
+                            background-color: #bebebe
+                            max-width: 80%
+                            line-height: 1.25em
+                            font-size: 12px
+                            border-radius: 12px
+                            padding: 4px 12px
+                            color: #fff
+                            min-height: 1.5em
+                            overflow-wrap: break-word
                     .message
                         max-width: 70%
                         width: max-content
@@ -107,6 +122,9 @@ body
                     border: none
                     resize: none
                     color: #757575
+                    border-radius: 5px
+                    &[disabled]
+                        background-color: #e7e7e7
                 button
                     width: 32px
                     height: 32px
