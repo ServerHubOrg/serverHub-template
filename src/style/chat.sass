@@ -14,7 +14,7 @@ body
             position: fixed
             top: calc(50% - 300px)
             height: 600px
-            left: calc(50% - 240px)
+            left: calc(50% - 264px)
             width: 480px
             overflow: hidden
             .chatbox
@@ -142,8 +142,37 @@ body
                         color: #2196f3
                         cursor: pointer
         section.chatcontrol
+            position: fixed
+            left: calc(50% + 224px)
+            top: calc(50% - 300px)
+            width: 40px
             .mobile
                 display: none
+            .desktop
+                display: block
+                width: 100%
+                .action
+                    display: flex
+                    width: 100%
+                    flex-direction: column
+                    justify-content: flex-start
+                    button
+                        border: none
+                        background-color: white
+                        box-shadow: 0 2px 9px 0 rgba(0,0,0,.3)
+                        cursor: pointer
+                        font-size: 24px
+                        border-radius: 50%
+                        width: 40px
+                        height: 40px
+                        padding: 0
+                        margin-bottom: 8px
+                        color: #666666
+                        outline: none
+                        a, a:hover, a:visited, a:active
+                            color: #666666
+                            text-decoration: none
+
 @media (max-width: 480px)
         body main section.chat
             width: 100%
@@ -159,8 +188,11 @@ body
             left: 0 
             right: 0
             z-index: 999
+            width: 100%
             background-color: #ffffff
             box-shadow: 0 2px 8px 0 rgba(0,0,0,.3)
+            .desktop
+                display: none
             .mobile
                 display: flex
                 justify-content: space-between
@@ -172,7 +204,7 @@ body
                     span
                         font-weight: 500
                 .action
-                    margin-top: 12px
+                    display: block
                     button
                         border: none
                         background-color: transparent
@@ -181,7 +213,7 @@ body
                         width: 32px
                         height: 32px
                         padding: 0
-                        margin-left: 4px
+                        margin-top: 12px
                         color: #666666
                         outline: none
                         a, a:hover, a:visited, a:active

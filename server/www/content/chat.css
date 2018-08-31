@@ -13,7 +13,7 @@ body {
     position: fixed;
     top: calc(50% - 300px);
     height: 600px;
-    left: calc(50% - 240px);
+    left: calc(50% - 264px);
     width: 480px;
     overflow: hidden; }
     body main section.chat .chatbox {
@@ -139,8 +139,37 @@ body {
         body main section.chat .messagebox button.ready {
           color: #2196f3;
           cursor: pointer; }
-  body main section.chatcontrol .mobile {
-    display: none; }
+  body main section.chatcontrol {
+    position: fixed;
+    left: calc(50% + 224px);
+    top: calc(50% - 300px);
+    width: 40px; }
+    body main section.chatcontrol .mobile {
+      display: none; }
+    body main section.chatcontrol .desktop {
+      display: block;
+      width: 100%; }
+      body main section.chatcontrol .desktop .action {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: flex-start; }
+        body main section.chatcontrol .desktop .action button {
+          border: none;
+          background-color: white;
+          box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.3);
+          cursor: pointer;
+          font-size: 24px;
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+          padding: 0;
+          margin-bottom: 8px;
+          color: #666666;
+          outline: none; }
+          body main section.chatcontrol .desktop .action button a, body main section.chatcontrol .desktop .action button a:hover, body main section.chatcontrol .desktop .action button a:visited, body main section.chatcontrol .desktop .action button a:active {
+            color: #666666;
+            text-decoration: none; }
 
 @media (max-width: 480px) {
   body main section.chat {
@@ -157,8 +186,11 @@ body {
     left: 0;
     right: 0;
     z-index: 999;
+    width: 100%;
     background-color: #ffffff;
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3); }
+    body main section.chatcontrol .desktop {
+      display: none; }
     body main section.chatcontrol .mobile {
       display: flex;
       justify-content: space-between;
@@ -170,7 +202,7 @@ body {
         body main section.chatcontrol .mobile .greeting span {
           font-weight: 500; }
       body main section.chatcontrol .mobile .action {
-        margin-top: 12px; }
+        display: block; }
         body main section.chatcontrol .mobile .action button {
           border: none;
           background-color: transparent;
@@ -179,7 +211,7 @@ body {
           width: 32px;
           height: 32px;
           padding: 0;
-          margin-left: 4px;
+          margin-top: 12px;
           color: #666666;
           outline: none; }
           body main section.chatcontrol .mobile .action button a, body main section.chatcontrol .mobile .action button a:hover, body main section.chatcontrol .mobile .action button a:visited, body main section.chatcontrol .mobile .action button a:active {

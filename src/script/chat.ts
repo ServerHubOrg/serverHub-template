@@ -93,9 +93,9 @@ _socket.addEventListener('message', (ev) => {
         setTimeout(() => {
             document.querySelector('#clientName').textContent = _clientName;
             document.querySelector('#textcontent').removeAttribute('disabled');
-            document.querySelector('#leave-session').addEventListener('click', () => {
+            document.querySelectorAll('.leave-session').forEach(e => e.addEventListener('click', () => {
                 location.href = '/'
-            })
+            }));
         }, 40)
         scrollToChatBottom();
     }
@@ -135,15 +135,6 @@ function sendMessage (v: string) {
 
 let _potentialScrollTop = 0;
 function incomingMessage (name: string, msg: string, id: string) {
-    /**
-     * .message-line.incoming(data-sender='abcd3f22')
-                        .message
-                            image.avatar(data-avatar='1' src='/asset/home.png')
-                            .content 
-                                p Hello
-                                p This is David
-     */
-
     let message_line = document.createElement('div');
     message_line.classList.add('message-line', 'incoming');
     message_line.setAttribute('data-sender', id);
@@ -171,15 +162,6 @@ function incomingMessage (name: string, msg: string, id: string) {
     document.querySelector('main section.chat div.chatbox').appendChild(message_line);
 }
 function outgoingMessage (name: string, msg: string, id: string) {
-    /**
-     * .message-line.incoming(data-sender='abcd3f22')
-                        .message
-                            image.avatar(data-avatar='1' src='/asset/home.png')
-                            .content 
-                                p Hello
-                                p This is David
-     */
-
     let message_line = document.createElement('div');
     message_line.classList.add('message-line', 'outgoing');
     message_line.setAttribute('data-sender', id);

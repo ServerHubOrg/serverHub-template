@@ -24,6 +24,13 @@ html
                         button#about-demo
                             a(href="/about/")
                                 i.fas.fa-question
-                        button#leave-session
+                        button.leave-session
+                            i.fas.fa-sign-out-alt
+                .desktop
+                    .action
+                        button#about-demo(title='About the demo')
+                            a(href="/about/")
+                                i.fas.fa-question
+                        button.leave-session(title='Leave the chatroom')
                             i.fas.fa-sign-out-alt
         script(src="/script/chat.js")
