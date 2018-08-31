@@ -139,6 +139,8 @@ body {
         body main section.chat .messagebox button.ready {
           color: #2196f3;
           cursor: pointer; }
+  body main section.chatcontrol .mobile {
+    display: none; }
 
 @media (max-width: 480px) {
   body main section.chat {
@@ -147,4 +149,39 @@ body {
     border-radius: 0;
     height: calc(100% - 56px);
     top: 56px;
-    left: 0; } }
+    left: 0; }
+  body main section.chatcontrol {
+    height: 56px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3); }
+    body main section.chatcontrol .mobile {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 16px; }
+      body main section.chatcontrol .mobile .greeting {
+        height: 32px;
+        line-height: 30px;
+        margin-top: 12px; }
+        body main section.chatcontrol .mobile .greeting span {
+          font-weight: 500; }
+      body main section.chatcontrol .mobile .action {
+        margin-top: 12px; }
+        body main section.chatcontrol .mobile .action button {
+          border: none;
+          background-color: transparent;
+          font-size: 24px;
+          border-radius: 50%;
+          width: 32px;
+          height: 32px;
+          padding: 0;
+          margin-left: 4px;
+          color: #666666;
+          outline: none; }
+          body main section.chatcontrol .mobile .action button a, body main section.chatcontrol .mobile .action button a:hover, body main section.chatcontrol .mobile .action button a:visited, body main section.chatcontrol .mobile .action button a:active {
+            color: #666666;
+            text-decoration: none; } }

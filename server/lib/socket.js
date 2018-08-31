@@ -18,7 +18,8 @@ module.exports = function (socket) {
                         control: 0,
                         clientName: socket.clientName,
                         clientID: socket.clientID,
-                        message: data.message
+                        message: data.message,
+                        avatarId: getAvatarID(socket.clientName)
                     }))
                 }
             });
@@ -30,7 +31,8 @@ module.exports = function (socket) {
             socket.clientName = data.clientName.substr(0, 20);
             socket.send(JSON.stringify({
                 control: 2,
-                clientName: socket.clientName
+                clientName: socket.clientName,
+                avatarId: getAvatarID(socket.clientName)
             }))
             sockets.map(s => {
                 if (s.clientID !== socket.clientID)
@@ -49,10 +51,24 @@ module.exports = function (socket) {
                 newsockets.push(s);
                 s.send(JSON.stringify({
                     control: 5,
-                    clientName: socket.clientName
+                    avatarId: getAvatarID(socket.clientName),
+                    clientName: socket.clientName,
+                    clientID: socket.clientID
                 }))
             }
         })
         sockets = newsockets;
     })
+}
+
+
+function getAvatarID(str) {
+    if (str) {
+        let code = 0;
+        for (let i = 0; i < str.length; i++) {
+            code += str.codePointAt(i);
+        }
+        return code % 6;
+    }
+    return 0;
 }

@@ -50,7 +50,9 @@ let _clientID = '';
 let match = location.search.match(/(?:name=)([a-z_][a-z\d_-]{1,18}[a-z\d_])/i)
 let _clientName = match ? match[1] : 'unknown';
 if (_clientName === 'unknown') location.href = '/';
+let _avatarID = 0;
 let _messageTemp = '';
+let _avatarCollection = {};
 _socket.addEventListener('open', () => {
     console.log('socket ready');
 })
@@ -62,6 +64,7 @@ _socket.addEventListener('message', (ev) => {
         clientID?: string;
         clientName?: string;
         message?: string;
+        avatarId?: number;
     }
     if (data.control === 0) {
         // receive new message
@@ -69,6 +72,8 @@ _socket.addEventListener('message', (ev) => {
         let m = data.message;
         let n = data.clientName;
         let i = data.clientID;
+        let a = data.avatarId;
+        (_avatarCollection as any)[i] = a;
         incomingMessage(n, m, i);
         if (_potentialScrollTop === 0) {
             scrollToChatBottom();
@@ -83,9 +88,16 @@ _socket.addEventListener('message', (ev) => {
     }
     if (data.control === 2) {
         _clientName = data.clientName;
+        _avatarID = data.avatarId;
         systemMessage('Welcome to the new session, ' + _clientName);
+        setTimeout(() => {
+            document.querySelector('#clientName').textContent = _clientName;
+            document.querySelector('#textcontent').removeAttribute('disabled');
+            document.querySelector('#leave-session').addEventListener('click', () => {
+                location.href = '/'
+            })
+        }, 40)
         scrollToChatBottom();
-        document.querySelector('#textcontent').removeAttribute('disabled');
     }
     if (data.control === 3) {
         outgoingMessage(_clientName, _messageTemp, _clientID);
@@ -102,6 +114,9 @@ _socket.addEventListener('message', (ev) => {
     if (data.control === 5) {
         // someone left the chat
         let name = data.clientName;
+        let avatarid = data.avatarId;
+        let id = data.clientID;
+        (_avatarCollection as any)[id] = avatarid;
         systemMessage(`${name} left the chat`);
         if (_potentialScrollTop === 0)
             scrollToChatBottom();
@@ -137,7 +152,7 @@ function incomingMessage (name: string, msg: string, id: string) {
     let image = document.createElement('img');
     image.classList.add('avatar');
     image.setAttribute('data-avatar', '1');
-    image.setAttribute('src', '/asset/avatar.png');
+    image.setAttribute('src', '/asset/avatar' + (_avatarCollection as any)[id] + '.png');
     message.appendChild(image);
     let n = document.createElement('span');
     n.classList.add('name');
@@ -148,7 +163,7 @@ function incomingMessage (name: string, msg: string, id: string) {
     let ps = msg.split('\n');
     ps.map(p => {
         let pg = document.createElement('p');
-        pg.innerHTML = p.replace(/\s/g,'&nbsp;').replace(/<\/?script.*>/ig,'');
+        pg.innerHTML = p.replace(/\s/g, '&nbsp;').replace(/<\/?script.*>/ig, '');
         content.appendChild(pg);
     });
     message.appendChild(content);
@@ -173,7 +188,7 @@ function outgoingMessage (name: string, msg: string, id: string) {
     let image = document.createElement('img');
     image.classList.add('avatar');
     image.setAttribute('data-avatar', '1');
-    image.setAttribute('src', '/asset/avatar.png');
+    image.setAttribute('src', '/asset/avatar' + _avatarID + '.png');
     message.appendChild(image);
     let n = document.createElement('span');
     n.classList.add('name');
@@ -184,7 +199,7 @@ function outgoingMessage (name: string, msg: string, id: string) {
     let ps = msg.split('\n');
     ps.map(p => {
         let pg = document.createElement('p');
-        pg.innerHTML = p.replace(/\s/g,'&nbsp;').replace(/<\/?script.*>/ig,'');
+        pg.innerHTML = p.replace(/\s/g, '&nbsp;').replace(/<\/?script.*>/ig, '');
         content.appendChild(pg);
     });
     message.appendChild(content);

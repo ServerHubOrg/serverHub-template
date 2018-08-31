@@ -141,6 +141,9 @@ body
                     &.ready
                         color: #2196f3
                         cursor: pointer
+        section.chatcontrol
+            .mobile
+                display: none
 @media (max-width: 480px)
         body main section.chat
             width: 100%
@@ -149,3 +152,38 @@ body
             height: calc(100% - 56px)
             top: 56px
             left: 0
+        body main section.chatcontrol
+            height: 56px
+            position: fixed
+            top: 0
+            left: 0 
+            right: 0
+            z-index: 999
+            background-color: #ffffff
+            box-shadow: 0 2px 8px 0 rgba(0,0,0,.3)
+            .mobile
+                display: flex
+                justify-content: space-between
+                padding: 0 16px
+                .greeting
+                    height: 32px
+                    line-height: 30px
+                    margin-top: 12px
+                    span
+                        font-weight: 500
+                .action
+                    margin-top: 12px
+                    button
+                        border: none
+                        background-color: transparent
+                        font-size: 24px
+                        border-radius: 50%
+                        width: 32px
+                        height: 32px
+                        padding: 0
+                        margin-left: 4px
+                        color: #666666
+                        outline: none
+                        a, a:hover, a:visited, a:active
+                            color: #666666
+                            text-decoration: none

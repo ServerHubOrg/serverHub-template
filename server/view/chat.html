@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="/content/chat.css"/>
     <link rel="stylesheet" href="/content/brands.css"/>
+    <link rel="stylesheet" href="/content/solid.css"/>
     <link rel="stylesheet" href="/content/fontawesome.css"/>
   </head>
   <body>
@@ -17,7 +18,15 @@
           <button id="send"><i class="fab fa-telegram"></i></button>
         </div>
       </section>
-      <section class="chatcontrol"></section>
+      <section class="chatcontrol">
+        <div class="mobile">
+          <div class="greeting">Hello,&nbsp;<span id="clientName">Unknown</span></div>
+          <div class="action">
+            <button id="about-demo"><a href="/about/"><i class="fas fa-question"></i></a></button>
+            <button id="leave-session"><i class="fas fa-sign-out-alt"></i></button>
+          </div>
+        </div>
+      </section>
     </main>
     <script src="/script/chat.js"></script>
   </body>

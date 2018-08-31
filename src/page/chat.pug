@@ -5,27 +5,25 @@ html
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         link(rel="stylesheet", href="/content/chat.css")
         link(rel="stylesheet" href="/content/brands.css")
+        link(rel="stylesheet" href="/content/solid.css")
         link(rel="stylesheet" href="/content/fontawesome.css")
     body
         main
             section.chat
                 .chatbox
-                    //- .message-line.incoming(data-sender='abcd3f22')
-                    //-     .message
-                    //-         image.avatar(data-avatar='1' src='/asset/home.png')
-                    //-         span.name David
-                    //-         .content 
-                    //-             p Hello
-                    //-             p This is David
-                    //- .message-line.info
-                    //-     span John joined the chat
-                    //- .message-line.info
-                    //-     span JohnSDJFIJODJOFIJSDOFJDJSFJSDFJDSIJFOSDJ joined the chat
-                    //- .message-line.info
-                    //-     span JohnSD J FI JODJ OF IJSDOFJDJSFJSDFJDSIJFOSDJ joined the chat
                 .messagebox
                     textarea#textcontent(placeholder="say something to everyone" disabled)
                     button#send
                         i.fab.fa-telegram
             section.chatcontrol
+                .mobile
+                    .greeting
+                        | Hello,&nbsp;
+                        span#clientName Unknown
+                    .action
+                        button#about-demo
+                            a(href="/about/")
+                                i.fas.fa-question
+                        button#leave-session
+                            i.fas.fa-sign-out-alt
         script(src="/script/chat.js")
