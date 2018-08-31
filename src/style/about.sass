@@ -1,0 +1,35 @@
+@import url('/content/notosansscsliced.css')
+*
+    box-sizing: border-box
+body
+    margin: 0
+    font-size: 16px
+    font-family: 'Noto Sans SC Sliced', 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-seri
+    color: #424242
+
+a,a:hover,a:visited,a:active
+    color: #2196f3
+    text-decoration: none
+a:hover
+    text-decoration: underline
+
+
+main
+    width: calc(100% - 32px)
+    margin-left: 16px
+    margin-top: 32px
+    margin-bottom: 32px
+    @media (min-width: 800px)
+        &
+            width: 800px
+            margin-left: calc(50% - 400px)
+    section
+        p
+            line-height: 1.5em
+            margin-top: 12px
+            margin-bottom: 12px
+            code
+                margin: 0 8px
+                background: #f0f0f0
+                padding: 0 4px
+                border-radius: 3px

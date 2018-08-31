@@ -1,0 +1,45 @@
+
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta title="Realtime Chatroom"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="/content/about.css"/>
+  </head>
+  <body>
+    <main>
+      <h1>About ServerHub's Realtime Chat Demo</h1>
+      <p><a href="/">Home</a></p>
+      <section class="introduction">
+        <h2>Introduction</h2>
+        <p>This is a demo built on ServerHub's WebSocket APIs. This help article will introduce the features and usage of this RTC demo. To catch up with ServerHub's WebSocket API, you need to install<code>serverhub-mvc</code>from npm registry (Sugessted version is<code>v1.6.2+</code>).</p>
+        <p>ServerHub Open Source program has provided a lot documents about this, check it out at&nbsp;<a href="https://docs.serverhub.io/">docs.serverhub.io</a>.</p>
+        <p>This RTC demo provide you ability to chat with anyone all over the world without providing any of your information. Your privacy is not been collected. All source code is available at&nbsp;<a href="https://github.com/ServerHubOrg/serverhub-template/tree/feature-chat">GitHub - ServerHubOrg/serverhub-template#feature-chat</a>.</p>
+        <h2>Chat History</h2>
+        <p>As we don't use cookie in this demo, your connection to the remote server is state-less. So everytime you refresh your browser, the same account name and avatar will be shown but all the previous conversations are cleared. You can continue talking with other online users.</p>
+        <p>If you did refresh the page, other users might have a notice that you left the chat and then returned. That's why your privacy/security counts the most!</p>
+      </section>
+      <section class="usage">
+        <h2>Everything Starts from Home</h2>
+        <p>You may find a input box from the home page. Simply input a nick name for yourself like <i>Wayne</i>, and click the paper airplane button (or tap 'Enter' on your keyboard).</p>
+        <p><strong>Note</strong>: available nick names always starts with a-z or a '_'. Then followed by several digits, a...z, '_' or '-'. But '-' is not allowed to be the trailing character.</p>
+        <p>After successfully entered the chatroom, there is nothing to say. Enjoy!</p>
+      </section>
+      <section class="miscellaneous">
+        <h2>Miscellaneous</h2>
+        <h3>Fonts</h3>
+        <p>All text content are using self-hosted&nbsp;<a href="https://fonts.google.com/earlyaccess">Noto Sans SC Sliced font from Google Fonts</a>. We can use Roboto, but to support Chinese, Noto Sans SC is significantly better.</p>
+        <p>All icons are coming from&nbsp;<a href="https://fontawesome.com/">Fontawesome</a>&nbsp;(including the Telegram font icon).</p>
+        <h3>Avatars</h3>
+        <p>Those adorable avatars come from&nbsp;<a href="http://avatars.adorable.io/">Adorable Avatars</a>.</p>
+        <h3>Video Background</h3>
+        <p>The video background of home page comes from&nbsp;<a href="https://www.videezy.com/water/212-beach-rocks-at-dusk-stock-video-in-hd">www.videezy.com</a>.</p>
+      </section>
+      <section class="extend">
+        <h2>More</h2>
+        <p>If you are interested in this project, please help support it. Enjoy all from ServerHub Open Source!</p>
+      </section>
+    </main>
+    <script src="/script/about.js"></script>
+  </body>
+</html>
