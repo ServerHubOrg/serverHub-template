@@ -142,7 +142,7 @@ function incomingMessage(name, msg, id) {
     let ps = msg.split('\n');
     ps.map(p => {
         let pg = document.createElement('p');
-        pg.textContent = p;
+        pg.innerHTML = p.replace(/\s/g, '&nbsp;').replace(/<\/?script.*>/ig, '');
         content.appendChild(pg);
     });
     message.appendChild(content);
@@ -177,7 +177,7 @@ function outgoingMessage(name, msg, id) {
     let ps = msg.split('\n');
     ps.map(p => {
         let pg = document.createElement('p');
-        pg.textContent = p;
+        pg.innerHTML = p.replace(/\s/g, '&nbsp;').replace(/<\/?script.*>/ig, '');
         content.appendChild(pg);
     });
     message.appendChild(content);
